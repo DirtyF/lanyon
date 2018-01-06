@@ -48,13 +48,7 @@ If you intend to use GitHub Pages, then it should rather look like:
 
 source "https://rubygems.org"
 
-group :jekyll_plugins do
-  gem "github-pages"
-  gem "jekyll-feed"
-  gem "jekyll-paginate"
-  gem "jekyll-sitemap"
-  gem "jekyll-theme-lanyon"
-end
+gem "github-pages", group: :jekyll_plugins
 ```
 
 To use a remote theme on GitHub Pages, your `_config.yml` should mention:
@@ -62,7 +56,6 @@ To use a remote theme on GitHub Pages, your `_config.yml` should mention:
 ```ruby
 remote_theme: dirtyf/lanyon@v1.1.0
 plugins:
-  - jekyll-theme-lanyon
   - jekyll-paginate
   - jekyll-feed
   - jekyll-sitemap

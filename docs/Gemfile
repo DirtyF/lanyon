@@ -12,10 +12,11 @@ source "https://rubygems.org"
 # gem "jekyll-theme-lanyon"
 
 # Comment out all the following lines if you don't plan to use GitHub Pages
+
+gem "github-pages", group: :jekyll_plugins
+
 group :jekyll_plugins do
-  gem "github-pages"
   gem "jekyll-feed"
   gem "jekyll-paginate"
   gem "jekyll-sitemap"
-  gem "jekyll-theme-lanyon"
 end
