@@ -2,21 +2,13 @@
 
 source "https://rubygems.org"
 
-# Use local gem for testing
+# Development: Use local gem for testing
 # gem "jekyll-theme-lanyon", :path => "../"
-
-# Default to GitHub Pages for demo purpose
 
 # Uncomment if you plan to use default Jekyll
 # gem "jekyll", "~> 3.6"
 # gem "jekyll-theme-lanyon"
 
-# Comment out all the following lines if you don't plan to use GitHub Pages
-
+# Default to GitHub Pages for demo purpose
+# Comment out the following line if you don't plan to use GitHub Pages
 gem "github-pages", group: :jekyll_plugins
-
-group :jekyll_plugins do
-  gem "jekyll-feed"
-  gem "jekyll-paginate"
-  gem "jekyll-sitemap"
-end
