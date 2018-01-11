@@ -19,11 +19,12 @@ version:       1.1.0
 
 # Build settings
 
-# Default Jekyll
+# Gem-based theme
 # theme:       jekyll-theme-lanyon
 
-# With GitHub Pages gem
+# Remote theme with GitHub Pages
 remote_theme:  dirtyf/lanyon
+
 plugins:
   - jekyll-paginate
   - jekyll-feed
