@@ -8,8 +8,11 @@ Lanyon is an unassuming [Jekyll](http://jekyllrb.com) theme that places content 
 
 ## Contents
 
+- [Install](#install)
+  - [As a fork](#as-a-fork)
+  - [As a gem-based theme](#as-a-gem-based-theme)
+  - [As a remote theme on GitHub Pages](#as-a-remote-theme-on-github-pages)
 - [Usage](#usage)
-  - [Install as a gem](#install-as-a-gem-based-theme)
 - [Options](#options)
   - [Sidebar menu](#sidebar-menu)
   - [Themes](#themes)
@@ -19,18 +22,19 @@ Lanyon is an unassuming [Jekyll](http://jekyllrb.com) theme that places content 
 - [License](#license)
 
 
-## Usage
+## Install
+
+You can install Jekyll themes in three ways.
+
+### As a Fork
 
 Lanyon is a theme built on top of [Poole](https://github.com/poole/poole), which provides a fully furnished Jekyll setup—just download and start the Jekyll server. See [the Poole usage guidelines](https://github.com/poole/poole#usage) for how to install and use Jekyll.
 
-## Install as a gem-based theme
+### As a gem-based theme
 
-Jekyll encourage the use of `bundler` to manage themes and plugins. [Themes](https://jekyllrb.com/docs/themes/) can be packaged as Ruby gems since Jekyll 3.3. If you don't intend to modify the theme a lot, this is a nice way of focusing on your content and benefits from  theme updates.
+Jekyll encourages the use of `bundler` to manage themes and plugins. [Themes](https://jekyllrb.com/docs/themes/) can be packaged as Ruby gems since Jekyll v3.3.0. If you don't intend to modify the theme a lot, this is a nice way of focusing on your content and benefit from theme updates.
 
-### 1. Install theme
-
-1. Create a folder that will be your Jekyll source directory, e.g `blog`.
-2. Create a `Gemfile` in your source directory to list all theme dependencies, it should looks like this:
+1. List the theme as a dependency in your `Gemfile`:
 
 ```ruby
 # frozen_string_literal: true
@@ -41,7 +45,13 @@ gem "jekyll", "~> 3.7.0"
 gem "jekyll-theme-lanyon", "~> 1.1"
 ```
 
-If you intend to use GitHub Pages, then it should rather look like:
+2. Copy default [`_config.yml`](docs/_config.yml), comment out `theme: jekyll-theme-lanyon` and comment or remove `remote_theme:  dirtyf/lanyon`.
+3. Copy also [`index.html`](docs/index.html), [`404.html`](docs/404.html) and [`about.md`](docs/about.md) from this repository's [example files](docs) to your source directory.
+3. Run `bundle update` to update all dependencies.
+
+### As a remote theme on GitHub Pages
+
+1. Go with the default GitHub Pages `Gemfile`:
 
 ```ruby
 # frozen_string_literal: true
@@ -51,23 +61,15 @@ source "https://rubygems.org"
 gem "github-pages", group: :jekyll_plugins
 ```
 
-To use a remote theme on GitHub Pages, your `_config.yml` should mention:
+2. Copy [`_config.yml`](docs/_config.yml), [`index.html`](docs/index.html), [`404.html`](docs/404.html) (and [`about.md`](docs/about.md)) from this repository's [example files](docs) to your source directory.
 
 ```ruby
-remote_theme: dirtyf/lanyon@v1.1.0
-plugins:
-  - jekyll-paginate
-  - jekyll-feed
-  - jekyll-sitemap
+remote_theme: dirtyf/lanyon
 ```
 
-### 2. Configuration
+## Gem-based theme directory structure
 
-1. Run `bundle install` to install all theme dependencies.
-2. Copy [`_config.yml`](example/_config.yml), [`index.html`](docs/index.html), [`404.html`](docs/404.html) (and [`about.md`](docs/about.md)) from this repository's [example files](docs) to your source directory.
-3. Run `bundle exec jekyll serve --livereload` to preview your website locally.
-
-If you list the files in your source directory, don't be surprised if you only see:
+If you use the theme gem and list the files in your source directory, don't be surprised if you only see:
 
 ```
 ├── _posts        # your posts are here
@@ -109,6 +111,10 @@ tree $(bundle show jekyll-theme-lanyon)
 
 If you want to customize the theme, you'll have to copy the files you need to modify in your source directory.
 Report to jekyll's documentation to learn [how to override a theme](https://jekyllrb.com/docs/themes/#overriding-theme-defaults).
+
+## Usage
+
+Run `bundle exec jekyll serve` to preview your website locally.
 
 ## Options
 
